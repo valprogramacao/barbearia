@@ -13,25 +13,31 @@ header {
     gap: 14px;
 }
 
-.header-icons svg {
+/* A cor fica no link: assim vale tanto para o ícone em <i> (fonte)
+   quanto para o <svg> que o Font Awesome coloca no lugar */
+.header-icons a {
+    display: inline-flex;
     color: $white-normal;
-
+    font-size: 22px;
+    transition: color 0.3s;
 }
 
 .header-icons a:hover {
+    color: $red-light;
+
+    i,
     svg {
         animation: translateY 0.8s infinite alternate ease-in-out;
-        color: $red-light;
     }
 }
 
 @keyframes translateY {
     from {
-        transform: translate(0) scale(1);
+        transform: translateY(0) scale(1);
     }
 
     to {
-        transform: translate(-4px) scale(1.1);
+        transform: translateY(-4px) scale(1.1);
     }
 }
 
@@ -41,7 +47,7 @@ header {
     border-radius: 4px;
     color: $white-normal;
     background-color: transparent;
-    transition: backgroubd-color 0.8s;
+    transition: background-color 0.8s;
 }
 
 .header-buttom:hover {
@@ -63,7 +69,7 @@ header {
         align-items: center;
         justify-content: center;
 
-        svg {
+        .header-icons a {
             margin-top: 16px;
             font-size: 34px;
         }
